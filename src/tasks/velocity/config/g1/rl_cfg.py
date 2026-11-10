@@ -10,6 +10,8 @@ from mjlab.rl import (
 def unitree_g1_ppo_runner_cfg() -> RslRlOnPolicyRunnerCfg:
   """Create RL runner configuration for Unitree G1 velocity task."""
   return RslRlOnPolicyRunnerCfg(
+    logger="tensorboard",
+    upload_model=False,
     actor=RslRlModelCfg(
       hidden_dims=(512, 256, 128),
       activation="elu",
